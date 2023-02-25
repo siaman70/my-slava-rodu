@@ -11,10 +11,11 @@
     <ul>
     <!-- Ranges through content/posts/*.md -->
     {{ range .Pages }}
-        <li>
+        <li> {{ . }}
             <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
         </li>
     {{ end }}
     </ul>
+    (Example from <a href="https://gohugo.io/templates/lists/#example-project-directory">Project Directory</a>)
 </main>
 {{ end }}
