@@ -3,3 +3,6 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = "minimal-theme"
 sectionPagesMenu = "main"
+[params]
+  githubRepo = "https://github.com"
+  githubEditPath = "edit/main/"

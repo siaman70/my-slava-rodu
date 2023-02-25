@@ -1,0 +1,14 @@
+
+{{- if .File }}
+  {{ $.Scratch.Set "minimalFilePath" (path.Join (default "content" .Site.Params.contentDir) .File.Path) }}
+{{ else }}
+  {{ $.Scratch.Set "minimalFilePath" false }}
+{{ end -}}
+<div align = "left" font="small">themes/minimal-theme/layouts/partials/editpage.html</div >
+
+{{- if $.Scratch.Get "minimalFilePath" }}
+<div align="right">
+<a href="{{ $.Site.Params.githubRepo }}/{{ path.Join $.Site.Params.githubEditPath ($.Scratch.Get "minimalFilePath") }}">
+  Edit Page</a>
+  </div>
+{{ end -}}
