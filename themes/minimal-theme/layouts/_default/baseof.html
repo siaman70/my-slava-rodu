@@ -3,9 +3,15 @@
     <hr/>{{- partial "head.html" . -}}<hr/>
     <body>
         <hr/>{{- partial "header.html" . -}}<hr/>
+        <table><tr><td>
+          {{ partial "navigation" .Site.Home }}
+          (Complete Site Navigation Example)
+      </td><td width ="30">&nbsp;</td>
+      <td valign = "top">
         <div id="content">
-        <hr/>{{- block "main" . }}{{- end }}<hr/>
+        {{- block "main" . }}{{- end }}
         </div>
+      </td></tr></table>
         <hr/>{{- partial "footer.html" . -}}<hr/>
     </body>
 </html>

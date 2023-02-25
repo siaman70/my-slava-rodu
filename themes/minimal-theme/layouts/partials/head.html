@@ -1,8 +1,1 @@
 themes/minimal-theme/layouts/partials/head.html
-
-    {{ $currentPage := . }}
-    {{ range .Site.Menus.main }}
-  <br/>  <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-    {{ end }}
-
-(Section Navigation Example)

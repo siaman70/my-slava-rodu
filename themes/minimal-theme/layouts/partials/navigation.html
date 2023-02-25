@@ -1,0 +1,26 @@
+themes/minimal-theme/layouts/partials/navigation.html<br/>
+<!-- from sitemap.html in bkleinen.github.io -->
+<ul>
+{{ template "complete_navigation" . }}
+</ul>
+<!-- further attributes:
+  <small>{{.Title}}{{.RelPermalink }} ({{.Kind}}- {{ .Weight}})</a> ---
+{{.Type }},{{.LinkTitle }},{{.Name }},{{.Title }}</small> -->
+
+{{ define "complete_navigation" }}
+    {{ if .Pages }}
+    <li>
+      {{.RelPermalink }}:</li>
+        <ul>
+          <li><a href= "{{ .Permalink }}">
+            Index ({{.Title }})</a></li>
+        {{ range sort .Pages "Kind"}}
+              {{ template "complete_navigation" . }}
+        {{ end }}
+        </ul>
+    {{ else }}
+        <li><a href= "{{ .Permalink }}">
+            {{.Title }}</a></li>
+    {{ end }}
+
+{{ end }}
