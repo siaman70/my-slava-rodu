@@ -15,6 +15,10 @@
       <td valign = "top">
         <div id="content" class = "block-main">
         {{- block "main" . }}{{- end }}
+        
+  <small>Further Page Attributes: Title: "{{.Title}}", 
+    RelPermalink: {{.RelPermalink }} (.Kind: {{.Kind}}- Weight: {{ .Weight}}) ---
+    Type: {{.Type }} LinkTitle: {{.LinkTitle }},Name: {{.Name }}</small>
         </div>
       </td></tr></table>
         {{- partial "footer.html" . -}}

@@ -1,8 +1,9 @@
 <div class="partial navigation partial-navigation">
   {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/navigation.html") -}}
  <hr/>
+ <ul>
   {{ template "complete_navigation" (dict  "currentPage" . "navPage" .Site.Home ) }}
-
+</ul>
 <!-- further attributes:
   <small>{{.Title}}{{.RelPermalink }} ({{.Kind}}- {{ .Weight}})</a> ---
 {{.Type }},{{.LinkTitle }},{{.Name }},{{.Title }}</small> -->
@@ -15,7 +16,10 @@
   {{ $active_class := cond (eq $currentPage $navPage) "active" "" }}
 
     {{ with $navPage }}
-      {{ template "menu_item" (dict "page" . "active" $active_class )}}
+      <li class = "{{$active_class}}">
+        <a href= "{{ .Permalink }}">
+          {{ .RelPermalink}} ({{.Title }})</a>
+      </li>
       {{ if .Pages }}
           <ul>
           {{ range sort .Pages "Kind"}}
@@ -26,14 +30,3 @@
     {{ end }}
 {{ end }}
 
-{{ define "menu_item" }}
-{{ $active_class := .active}}
-
-{{ with .page }}
-<li class = "{{$active_class}}">
-  <a href= "{{ .Permalink }}">
-    {{ .RelPermalink}} ({{.Title }})</a>
-</li>
-{{ end }}
-{{ end }}
- 
