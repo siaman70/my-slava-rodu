@@ -2,8 +2,9 @@
   {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/navigation.html") -}}
  
 <!-- from sitemap.html in bkleinen.github.io -->
+current page: {{ .Page }}
 <ul>
-{{ template "complete_navigation" (dict  "currentPage" . "navPage" . ) }}
+{{ template "complete_navigation" (dict  "currentPage" . "navPage" .Site.Home ) }}
 </ul>
 <!-- further attributes:
   <small>{{.Title}}{{.RelPermalink }} ({{.Kind}}- {{ .Weight}})</a> ---
@@ -14,6 +15,9 @@
   {{ $navPage := .navPage }}
   {{ $currentPage := .currentPage }}
   
+
+  {{ $active_class := cond (eq $currentPage $navPage) "active" "" }}
+  {{ $active_class }}
   bla
   {{ $currentPage }}
   {{ $navPage }}
@@ -22,19 +26,23 @@
       <li>
         {{.RelPermalink }}:</li>
           <ul>
-            <li>
-              <a href= "{{ .Permalink }}">
-              Index ({{.Title }})</a></li>
+            {{ template "menu_item" (dict "page" . "active" $active_class )}}
           {{ range sort .Pages "Kind"}}
                 {{ template "complete_navigation" (dict  "currentPage" $currentPage "navPage" . ) }}
           {{ end }}
           </ul>
       {{ else }}
-          <li><a href= "{{ .Permalink }}">
-              {{.Title }}</a></li>
+        {{ template "menu_item" (dict "page" . "active" $active_class ) }}
       {{ end }}
     {{ end }}
 {{ end }}
 
+{{ define "menu_item" }}
+{{ $active_class := .active}}
 
+{{ with .page }}
+<li class = "{{$active_class}}"><a href= "{{ .Permalink }}">
+  {{.Title }}</a></li>
+{{ end }}
+{{ end }}
  
