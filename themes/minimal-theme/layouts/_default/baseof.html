@@ -2,7 +2,7 @@
 <html>
     <head>
       {{- partial "sass.html" . -}}
-      <hr/>{{- partial "head.html" . -}}
+      {{- partial "head.html" . -}}
       
     </head>
     <body>
@@ -13,7 +13,7 @@
           (Complete Site Navigation Example)
       </td><td width ="30">&nbsp;</td>
       <td valign = "top">
-        <div id="content">
+        <div id="content" class = "block-main">
         {{- block "main" . }}{{- end }}
         </div>
       </td></tr></table>

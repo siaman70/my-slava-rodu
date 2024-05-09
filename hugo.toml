@@ -1,4 +1,4 @@
-baseURL = 'https://barnekleinen.de/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = "minimal-theme"

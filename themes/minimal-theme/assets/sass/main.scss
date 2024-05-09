@@ -1,13 +1,14 @@
 page-source{
-    font-size: 10px;
+    font-size: 12px;
+    font-family: courier;
 }
-header {
+header, head, .partial-head {
     padding: 3px 10px;
-    font: sans-serif;
+    font-family: sans-serif;
     font-size: 14px;
     border-radius: 3px;
     border: 1px solid darkgray;
-    background-color: lightsalmon;
+    background-color: #A9D1D9;
   }
   
 head {
@@ -17,3 +18,11 @@ head {
     border: 1px solid #e1e4e8;
     background-color: lightblue;
   }
+
+.block-main {
+  background-color: #D9BAA0;
+}
+.partial-head {
+  background-color: #84628E;
+}
+
