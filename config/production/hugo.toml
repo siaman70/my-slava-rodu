@@ -1,0 +1,4 @@
+baseURL = 'https://about-hugo.github.io/minimal-site'
+[params]
+  githubRepo = 'https://github.com/about-hugo/minimal-site'
+  themeRepo = 'https://github.com/about-hugo/minimal-site'

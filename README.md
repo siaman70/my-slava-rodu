@@ -16,13 +16,15 @@ https://about-hugo.github.io/minimal-site/
 ## Usage:
 
 - fork repository
-- create gh-pages branch
+- create gh-pages branch on github
 - switch on pages in repo settings
+- update settings for your site:
+- edit or copy the configuration in [config/production/hugo.toml](config/production/hugo.toml)
 - edit [.github/workflows/gh-pages.yml](.github/workflows/gh-pages.yml): 
   change the baseURL parameter for the hugo build:
 
 ```
-    run: hugo --baseURL 'https://about-hugo.github.io/minimal-site/'
+    run: hugo -e production
 ```
 
 The first deployment to a new github page is a bit tricky. See: 

@@ -4,7 +4,7 @@ title = 'My New Hugo Site'
 theme = "minimal-theme"
 sectionPagesMenu = "main"
 [params]
-  githubRepo = 'https://github.com/bkleinen/minimal-site'
+  githubRepo = 'https://github.com/about-hugo/minimal-site'
   githubEditPath = "edit/main/"
-  themeRepo = 'https://github.com/bkleinen/minimal-site'
+  themeRepo = 'https://github.com/about-hugo/minimal-site'
   themePartialPath = 'tree/main/themes/minimal-theme/layouts'
