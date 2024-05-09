@@ -1,9 +1,7 @@
 <div class="partial navigation partial-navigation">
   {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/navigation.html") -}}
- 
-<!-- from sitemap.html in bkleinen.github.io -->
-
-{{ template "complete_navigation" (dict  "currentPage" . "navPage" .Site.Home ) }}
+ <hr/>
+  {{ template "complete_navigation" (dict  "currentPage" . "navPage" .Site.Home ) }}
 
 <!-- further attributes:
   <small>{{.Title}}{{.RelPermalink }} ({{.Kind}}- {{ .Weight}})</a> ---
@@ -16,17 +14,14 @@
   
   {{ $active_class := cond (eq $currentPage $navPage) "active" "" }}
 
-    {{ with $navPage }} 
+    {{ with $navPage }}
+      {{ template "menu_item" (dict "page" . "active" $active_class )}}
       {{ if .Pages }}
-
           <ul>
-            {{ template "menu_item" (dict "page" . "active" $active_class )}}
           {{ range sort .Pages "Kind"}}
                 {{ template "complete_navigation" (dict  "currentPage" $currentPage "navPage" . ) }}
           {{ end }}
           </ul>
-      {{ else }}
-        {{ template "menu_item" (dict "page" . "active" $active_class ) }}
       {{ end }}
     {{ end }}
 {{ end }}
