@@ -1,4 +1,4 @@
-<div class="partial navigation">
+<div class="partial navigation partial-navigation">
   {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/navigation.html") -}}
  
 <!-- from sitemap.html in bkleinen.github.io -->
@@ -9,12 +9,19 @@
   <small>{{.Title}}{{.RelPermalink }} ({{.Kind}}- {{ .Weight}})</a> ---
 {{.Type }},{{.LinkTitle }},{{.Name }},{{.Title }}</small> -->
 </div>
+
 {{ define "complete_navigation" }}
+{{ $currentPage := . }}
+bla
+{{ $currentPage }}
+{{ .RelPermalink }}    
     {{ if .Pages }}
     <li>
       {{.RelPermalink }}:</li>
         <ul>
-          <li><a href= "{{ .Permalink }}">
+
+          <li>
+            <a href= "{{ .Permalink }}">
             Index ({{.Title }})</a></li>
         {{ range sort .Pages "Kind"}}
               {{ template "complete_navigation" . }}
@@ -26,3 +33,6 @@
     {{ end }}
 
 {{ end }}
+
+
+ 

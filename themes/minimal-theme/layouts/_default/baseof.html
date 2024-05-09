@@ -7,9 +7,10 @@
     <body>
         
         {{- partial "header.html" . -}}
-        <table><tr><td>
+        <table class = "two-columns"><tr><td>
+          <div id="navigation" class = "block-navigation">
           {{ partial "navigation" .Site.Home }}
-          
+          </div>
       </td><td width ="30">&nbsp;</td>
       <td valign = "top">
         <div id="content" class = "block-main">

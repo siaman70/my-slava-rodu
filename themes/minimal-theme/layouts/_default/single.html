@@ -1,8 +1,7 @@
 {{ define "main" }}
-<hr/>block main in themes/minimal-theme/layouts/_default/single.html
-
-    <h2>{{.Title}}</h2>
-    <hr/>
-    <hr/>block main: content
+{{- partial "source.html" (dict "siteparams" $.Site.Params "file" "_default/single.html") -}}
+ 
+    <h1>{{.Title}}</h1>
+    <hr/>block main: content from markdown file "{{.File }}.md"
     {{ .Content }}
 {{ end }}
