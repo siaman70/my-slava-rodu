@@ -4,10 +4,10 @@
 {{ else }}
   {{ $.Scratch.Set "minimalFilePath" false }}
 {{ end -}}
-<div align = "left" font="small">themes/minimal-theme/layouts/partials/editpage.html</div >
 
 {{- if $.Scratch.Get "minimalFilePath" }}
 <div align="right">
+</page-source>(themes/minimal-theme/layouts/partials/editpage.html)</page-source>
 <a href="{{ $.Site.Params.githubRepo }}/{{ path.Join $.Site.Params.githubEditPath ($.Scratch.Get "minimalFilePath") }}">
   Edit Page</a>
   </div>

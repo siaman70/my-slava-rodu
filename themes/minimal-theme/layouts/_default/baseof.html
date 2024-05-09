@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <hr/>{{- partial "head.html" . -}}
-    <hr/>{{- partial "editpage.html" . -}}
-
+    <head>
+      {{- partial "sass.html" . -}}
+      <hr/>{{- partial "head.html" . -}}
+      
+    </head>
     <body>
+        
         <hr/>{{- partial "header.html" . -}}<hr/>
         <table><tr><td>
           {{ partial "navigation" .Site.Home }}

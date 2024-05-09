@@ -1,6 +1,11 @@
+<header>
+  HEADER <page-source>(themes/minimal-theme/layouts/partials/header.html)</page-source>
+  {{- partial "editpage.html" . -}}
+ 
 <!-- Breadcrumb Navigation Example from https://gohugo.io/content-management/sections/
   -->
-themes/minimal-theme/layouts/partials/header.html<br/>
+<br/>
+(BreadCrumb Navigation Example:)
 {{- range .Ancestors.Reverse }}
 <a href="{{ .Permalink }}">{{ .Title }}</a> &gt;
 {{- end }}
@@ -8,4 +13,5 @@ themes/minimal-theme/layouts/partials/header.html<br/>
 <bold>
 <a href="{{ .Permalink }}">{{ .Title }}</a>
 </bold>
-(BreadCrumb Navigation Example)
+
+</header>
