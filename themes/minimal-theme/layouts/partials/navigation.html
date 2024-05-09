@@ -3,7 +3,7 @@
  
 <!-- from sitemap.html in bkleinen.github.io -->
 <ul>
-{{ template "complete_navigation" . }}
+{{ template "complete_navigation" (dict  "currentPage" . "navPage" . ) }}
 </ul>
 <!-- further attributes:
   <small>{{.Title}}{{.RelPermalink }} ({{.Kind}}- {{ .Weight}})</a> ---
@@ -11,27 +11,29 @@
 </div>
 
 {{ define "complete_navigation" }}
-{{ $currentPage := . }}
-bla
-{{ $currentPage }}
-{{ .RelPermalink }}    
-    {{ if .Pages }}
-    <li>
-      {{.RelPermalink }}:</li>
-        <ul>
-
-          <li>
-            <a href= "{{ .Permalink }}">
-            Index ({{.Title }})</a></li>
-        {{ range sort .Pages "Kind"}}
-              {{ template "complete_navigation" . }}
-        {{ end }}
-        </ul>
-    {{ else }}
-        <li><a href= "{{ .Permalink }}">
-            {{.Title }}</a></li>
+  {{ $navPage := .navPage }}
+  {{ $currentPage := .currentPage }}
+  
+  bla
+  {{ $currentPage }}
+  {{ $navPage }}
+    {{ with $navPage }} 
+      {{ if .Pages }}
+      <li>
+        {{.RelPermalink }}:</li>
+          <ul>
+            <li>
+              <a href= "{{ .Permalink }}">
+              Index ({{.Title }})</a></li>
+          {{ range sort .Pages "Kind"}}
+                {{ template "complete_navigation" (dict  "currentPage" $currentPage "navPage" . ) }}
+          {{ end }}
+          </ul>
+      {{ else }}
+          <li><a href= "{{ .Permalink }}">
+              {{.Title }}</a></li>
+      {{ end }}
     {{ end }}
-
 {{ end }}
 
 
