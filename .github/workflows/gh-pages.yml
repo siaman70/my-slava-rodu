@@ -24,7 +24,7 @@ jobs:
           extended: true
 
       - name: Build
-        run: run: hugo -e production
+        run: hugo -e production
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
