@@ -2,10 +2,9 @@
   {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/navigation.html") -}}
  
 <!-- from sitemap.html in bkleinen.github.io -->
-current page: {{ .Page }}
-<ul>
+
 {{ template "complete_navigation" (dict  "currentPage" . "navPage" .Site.Home ) }}
-</ul>
+
 <!-- further attributes:
   <small>{{.Title}}{{.RelPermalink }} ({{.Kind}}- {{ .Weight}})</a> ---
 {{.Type }},{{.LinkTitle }},{{.Name }},{{.Title }}</small> -->
@@ -15,16 +14,11 @@ current page: {{ .Page }}
   {{ $navPage := .navPage }}
   {{ $currentPage := .currentPage }}
   
-
   {{ $active_class := cond (eq $currentPage $navPage) "active" "" }}
-  {{ $active_class }}
-  bla
-  {{ $currentPage }}
-  {{ $navPage }}
+
     {{ with $navPage }} 
       {{ if .Pages }}
-      <li>
-        {{.RelPermalink }}:</li>
+
           <ul>
             {{ template "menu_item" (dict "page" . "active" $active_class )}}
           {{ range sort .Pages "Kind"}}
@@ -41,8 +35,10 @@ current page: {{ .Page }}
 {{ $active_class := .active}}
 
 {{ with .page }}
-<li class = "{{$active_class}}"><a href= "{{ .Permalink }}">
-  {{.Title }}</a></li>
+<li class = "{{$active_class}}">
+  <a href= "{{ .Permalink }}">
+    {{ .RelPermalink}} ({{.Title }})</a>
+</li>
 {{ end }}
 {{ end }}
  
