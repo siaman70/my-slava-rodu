@@ -1,4 +1,6 @@
-themes/minimal-theme/layouts/partials/navigation.html<br/>
+<div class="partial navigation">
+  {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/navigation.html") -}}
+ 
 <!-- from sitemap.html in bkleinen.github.io -->
 <ul>
 {{ template "complete_navigation" . }}
@@ -6,7 +8,7 @@ themes/minimal-theme/layouts/partials/navigation.html<br/>
 <!-- further attributes:
   <small>{{.Title}}{{.RelPermalink }} ({{.Kind}}- {{ .Weight}})</a> ---
 {{.Type }},{{.LinkTitle }},{{.Name }},{{.Title }}</small> -->
-
+</div>
 {{ define "complete_navigation" }}
     {{ if .Pages }}
     <li>

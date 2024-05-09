@@ -2,7 +2,7 @@ page-source{
     font-size: 12px;
     font-family: courier;
 }
-header, head, .partial-head {
+header, head, .partial-head, .block-main, .partial {
     padding: 3px 10px;
     font-family: sans-serif;
     font-size: 14px;
@@ -11,18 +11,13 @@ header, head, .partial-head {
     background-color: #A9D1D9;
   }
   
-head {
-    padding: 3px 10px;
-    font-size: 14px;
-    border-radius: 3px;
-    border: 1px solid #e1e4e8;
-    background-color: lightblue;
-  }
+
 
 .block-main {
-  background-color: #D9BAA0;
+  background-color: #d9baa0a0;
 }
-.partial-head {
-  background-color: #84628E;
+.partial-head, .footer {
+  background-color: #84628e6c;
+
 }
 

@@ -1,7 +1,7 @@
-<header>
-  HEADER <page-source>(themes/minimal-theme/layouts/partials/header.html)</page-source>
+<div class="partial header"><header>
+  {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/header.html") -}}
   {{- partial "editpage.html" . -}}
- 
+
 <!-- Breadcrumb Navigation Example from https://gohugo.io/content-management/sections/
   -->
 <br/>
@@ -15,3 +15,4 @@
 </bold>
 
 </header>
+</div>

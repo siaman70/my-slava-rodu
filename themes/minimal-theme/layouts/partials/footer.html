@@ -1,8 +1,10 @@
-themes/minimal-theme/layouts/partials/footer.html
-
+<div class = "partial footer">
+  {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/footer.html") -}}
     {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
   <br/>  <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
     {{ end }}
 <br/>
 (Lazy Blogger's Section Navigation Example)
+</div>
+

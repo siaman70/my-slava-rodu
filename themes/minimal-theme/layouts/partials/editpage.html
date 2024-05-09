@@ -1,4 +1,4 @@
-
+<div class = "partial editpage">
 {{- if .File }}
   {{ $.Scratch.Set "minimalFilePath" (path.Join (default "content" .Site.Params.contentDir) .File.Path) }}
 {{ else }}
@@ -12,3 +12,4 @@
   Edit Page</a>
   </div>
 {{ end -}}
+</div>

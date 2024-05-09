@@ -3,20 +3,19 @@
     <head>
       {{- partial "sass.html" . -}}
       {{- partial "head.html" . -}}
-      
     </head>
     <body>
         
-        <hr/>{{- partial "header.html" . -}}<hr/>
+        {{- partial "header.html" . -}}
         <table><tr><td>
           {{ partial "navigation" .Site.Home }}
-          (Complete Site Navigation Example)
+          
       </td><td width ="30">&nbsp;</td>
       <td valign = "top">
         <div id="content" class = "block-main">
         {{- block "main" . }}{{- end }}
         </div>
       </td></tr></table>
-        <hr/>{{- partial "footer.html" . -}}<hr/>
+        {{- partial "footer.html" . -}}
     </body>
 </html>
