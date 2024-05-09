@@ -1,26 +1,32 @@
-themes/minimal-theme/layouts/partials/navigation.html<br/>
-<!-- from sitemap.html in bkleinen.github.io -->
-<ul>
-{{ template "complete_navigation" . }}
+<div class="partial navigation partial-navigation">
+  {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/navigation.html") -}}
+ <hr/>
+ <ul>
+  {{ template "complete_navigation" (dict  "currentPage" . "navPage" .Site.Home ) }}
 </ul>
 <!-- further attributes:
   <small>{{.Title}}{{.RelPermalink }} ({{.Kind}}- {{ .Weight}})</a> ---
 {{.Type }},{{.LinkTitle }},{{.Name }},{{.Title }}</small> -->
+</div>
 
 {{ define "complete_navigation" }}
-    {{ if .Pages }}
-    <li>
-      {{.RelPermalink }}:</li>
-        <ul>
-          <li><a href= "{{ .Permalink }}">
-            Index ({{.Title }})</a></li>
-        {{ range sort .Pages "Kind"}}
-              {{ template "complete_navigation" . }}
-        {{ end }}
-        </ul>
-    {{ else }}
-        <li><a href= "{{ .Permalink }}">
-            {{.Title }}</a></li>
-    {{ end }}
+  {{ $navPage := .navPage }}
+  {{ $currentPage := .currentPage }}
+  
+  {{ $active_class := cond (eq $currentPage $navPage) "active" "" }}
 
+    {{ with $navPage }}
+      <li class = "{{$active_class}}">
+        <a href= "{{ .Permalink }}">
+          {{ .RelPermalink}} ({{.Title }})</a>
+      </li>
+      {{ if .Pages }}
+          <ul>
+          {{ range sort .Pages "Kind"}}
+                {{ template "complete_navigation" (dict  "currentPage" $currentPage "navPage" . ) }}
+          {{ end }}
+          </ul>
+      {{ end }}
+    {{ end }}
 {{ end }}
+

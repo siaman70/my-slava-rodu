@@ -1,0 +1,9 @@
+<div class="partial sass">
+  {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/sass.html") -}}
+  
+
+{{ $options := dict "transpiler" "libsass" "targetPath" "css/style.css" }}
+{{ with resources.Get "sass/main.scss" | toCSS $options | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+</div>

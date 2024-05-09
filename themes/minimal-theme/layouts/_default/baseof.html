@@ -1,19 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <hr/>{{- partial "head.html" . -}}
-    <hr/>{{- partial "editpage.html" . -}}
-
+    <head>
+      {{- partial "sass.html" . -}}
+      {{- partial "head.html" . -}}
+    </head>
     <body>
-        <hr/>{{- partial "header.html" . -}}<hr/>
-        <table><tr><td>
-          {{ partial "navigation" .Site.Home }}
-          (Complete Site Navigation Example)
+        
+        {{- partial "header.html" . -}}
+        <table class = "two-columns"><tr><td>
+          <div id="navigation" class = "block-navigation">
+          {{ partial "navigation" . }}
+          </div>
       </td><td width ="30">&nbsp;</td>
       <td valign = "top">
-        <div id="content">
+        <div id="content" class = "block-main">
         {{- block "main" . }}{{- end }}
+        
+  <small>Further Page Attributes: Title: "{{.Title}}", 
+    RelPermalink: {{.RelPermalink }} (.Kind: {{.Kind}}- Weight: {{ .Weight}}) ---
+    Type: {{.Type }} LinkTitle: {{.LinkTitle }},Name: {{.Name }}</small>
         </div>
       </td></tr></table>
-        <hr/>{{- partial "footer.html" . -}}<hr/>
+        {{- partial "footer.html" . -}}
     </body>
 </html>

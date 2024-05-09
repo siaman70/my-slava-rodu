@@ -1,6 +1,12 @@
+<div class="partial header"><header>
+  {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/header.html") -}}
+  {{- partial "editpage.html" . -}}
+
+  <h1>Minimal Theme Demo: {{ .Title }}</h1>
 <!-- Breadcrumb Navigation Example from https://gohugo.io/content-management/sections/
   -->
-themes/minimal-theme/layouts/partials/header.html<br/>
+<br/>
+(BreadCrumb Navigation Example:)
 {{- range .Ancestors.Reverse }}
 <a href="{{ .Permalink }}">{{ .Title }}</a> &gt;
 {{- end }}
@@ -8,4 +14,6 @@ themes/minimal-theme/layouts/partials/header.html<br/>
 <bold>
 <a href="{{ .Permalink }}">{{ .Title }}</a>
 </bold>
-(BreadCrumb Navigation Example)
+
+</header>
+</div>

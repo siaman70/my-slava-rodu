@@ -1,11 +1,12 @@
 {{ define "main" }}
-<hr/>block main in themes/minimal-theme/layouts/_default/list.html
+{{- partial "source.html" (dict "siteparams" $.Site.Params "file" "_default/list.html") -}}
+ 
 <!-- example from https://gohugo.io/templates/lists/#example-project-directory -->
 <main>
     <article>
-        <header>
+        
             <h1>{{.Title}}</h1>
-        </header>
+        
         <hr/>block main: .Content
         <!-- "{{.Content}}" pulls from the markdown content of the corresponding _index.md -->
         {{.Content}}
@@ -20,6 +21,7 @@
         </li>
     {{ end }}
     </ul>
-    (Example from <a href="https://gohugo.io/templates/lists/#example-project-directory">Project Directory</a>)
+    (Example from <a href="https://gohugo.io/templates/lists/#example-project-directory">Hugo Doc (Project Directory)</a>)
+<hr/>
 </main>
 {{ end }}

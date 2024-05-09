@@ -1,4 +1,4 @@
-baseURL = 'https://barnekleinen.de/'
+baseURL = '/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = "minimal-theme"
@@ -6,3 +6,5 @@ sectionPagesMenu = "main"
 [params]
   githubRepo = 'https://github.com/bkleinen/minimal-site'
   githubEditPath = "edit/main/"
+  themeRepo = 'https://github.com/bkleinen/minimal-site'
+  themePartialPath = 'tree/main/themes/minimal-theme/layouts'

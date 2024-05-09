@@ -1,0 +1,36 @@
+page-source{
+    font-size: 12px;
+    font-family: courier;
+}
+header, head, .partial-head, .block-main, .block-navigation, .partial, .footer, .two-columns {
+    padding: 3px 10px;
+    font-family: sans-serif;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid darkgray;
+    background-color: #A9D1D9;
+  }
+  
+.two-columns 
+{
+  background-color: #CCA0D9;
+}
+
+.block-navigation 
+{
+  background-color: #ffff0078;
+}
+.block-main {
+  background-color: #d9baa0a0;
+}
+
+.sidebar-nav-item {
+
+}
+.lazy-active {
+  background-color: #ff9999;
+}
+.active {
+  background-color: #ff9999;
+}
+

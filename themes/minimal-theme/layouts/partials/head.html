@@ -1,1 +1,3 @@
-themes/minimal-theme/layouts/partials/head.html
+<div class="partial head">
+    {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/head.html") -}}
+</div>

@@ -1,9 +1,7 @@
-<body>
-<p>themes/minimal-theme/layouts/404.html</p>
-
-<p>These instructions were shown when this file contained only the
-  filename:</p>
-
-<p>'"head" or "body" tag is required in html to append livereload script.
-As a fallback, Hugo injects it somewhere but it might not work properly.')</p>
-</body>
+{{ define "main" }}
+  <main id="main">
+    <div>
+      <h1 id="title"><a href="{{ "" | relURL }}">Go Home</a></h1>
+    </div>
+  </main>
+{{ end }}
