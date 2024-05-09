@@ -1,12 +1,30 @@
 # Hugo Minimal Site 
 
 This is a minimal site showcasing the minimal-theme.
+This theme shows a simple site structure
+with a dynamic navigation built from the site's 
+content folder structure.
+
+Also contains a breadcrumb example and a second navigation in 
+the footer showing only the sections.
+
+## Demo Site: 
+
+https://about-hugo.github.io/minimal-site/
+
 
 ## Usage:
 
 - fork repository
 - create gh-pages branch
 - switch on pages in repo settings
+- edit [.github/workflows/gh-pages.yml](.github/workflows/gh-pages.yml): 
+  change the baseURL parameter for the hugo build:
+
+```
+    run: hugo --baseURL 'https://about-hugo.github.io/minimal-site/'
+```
+
 - website published! <user>.github.io/<repo>
 
 ### Setup Github Pages
