@@ -25,6 +25,10 @@ https://about-hugo.github.io/minimal-site/
     run: hugo --baseURL 'https://about-hugo.github.io/minimal-site/'
 ```
 
+The first deployment to a new github page is a bit tricky. See: 
+https://github.com/peaceiris/actions-gh-pages?tab=readme-ov-file#%EF%B8%8F-first-deployment-with-github_token
+
+
 - website published! <user>.github.io/<repo>
 
 ### Setup Github Pages
