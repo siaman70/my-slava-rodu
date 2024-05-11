@@ -4,7 +4,7 @@
    (Lazy Blogger's Section Navigation Example):
    {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
-    <br/> <a class="sidebar-nav-item{{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} lazy-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+    <br/> <a class="sidebar-nav-item {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} lazy-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
     {{ end }}
 <br/>
 

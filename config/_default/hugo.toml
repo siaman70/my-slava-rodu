@@ -8,3 +8,9 @@ sectionPagesMenu = "main"
   githubEditPath = "edit/main/"
   themeRepo = 'https://github.com/about-hugo/minimal-site'
   themePartialPath = 'tree/main/themes/minimal-theme/layouts'
+
+[menus]
+  [[menus.main]]
+    name = 'Added by config in hugo.toml'
+    pageRef = '/subdir1/part2/content'
+    weight = 1
