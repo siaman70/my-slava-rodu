@@ -17,12 +17,12 @@
 
     {{ with $navPage }}
       <li class = "{{$active_class}}">
-        <a href= "{{ .Permalink }}">
-          {{ .RelPermalink}} ({{.Title }})</a>
+        Weight {{ .Weight }}:<a href= "{{ .Permalink }}">
+          <bold>{{ .RelPermalink}} ({{.Title }})</bold></a>
       </li>
       {{ if .Pages }}
           <ul>
-          {{ range sort .Pages "Kind"}}
+          {{ range sort .Pages "Weight"}}
                 {{ template "complete_navigation" (dict  "currentPage" $currentPage "navPage" . ) }}
           {{ end }}
           </ul>

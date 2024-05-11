@@ -1,11 +1,39 @@
 <div class = "partial footer">
    {{- partial "source.html" (dict "siteparams" $.Site.Params "file" "partials/footer.html") -}}
+
+   The menu items below are marked as active if the current page is in the respective section.
+   As two single pages are added to the menu (by config and front matter), these are included
+   in the section menu and if they are active, both these items as well as their sections are marked
+   as active.
    
-   (Lazy Blogger's Section Navigation Example):
+   <table><tr valign = "top"><td>
+   <h3>Navigation from .Site.Menus.main:</h3>
    {{ $currentPage := . }}
     {{ range .Site.Menus.main }}
-    <br/> <a class="sidebar-nav-item {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} lazy-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+   
+    <br/>Weight {{ .Weight }}:<a class="sidebar-nav-item {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} lazy-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
     {{ end }}
+    </td>
+    
+    <td>
+        <h3>sorted by Name: .Site.Menus.main</h3>
+        {{ $currentPage := . }}
+         {{ range sort .Site.Menus.main "Name"}}
+        
+         <br/>Weight {{ .Weight }}:<a class="sidebar-nav-item {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} lazy-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">
+            {{ .Name }} <small>(Page Title: {{ .Title }})</small></a>
+         {{ end }}
+         </td>
+         
+    <td>
+        <h3>Navigation from .Site.Menus.myownmenu</h3>
+        
+   {{ $currentPage := . }}
+    {{ range .Site.Menus.myownmenu }}
+   
+    <br/>Weight {{ .Weight }}:<a class="sidebar-nav-item {{if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }} lazy-active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+    {{ end }}
+    </td></tr></table>
 <br/>
 
 </div>
