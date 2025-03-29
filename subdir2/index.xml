@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Subdir2 on My New Hugo Site</title>
+    <link>https://siaman70.github.io/my-slava-rodu/subdir2/</link>
+    <description>Recent content in Subdir2 on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Feb 2023 14:41:09 +0100</lastBuildDate>
+    <atom:link href="https://siaman70.github.io/my-slava-rodu/subdir2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Content 2 (added via front matter to main menu)</title>
+      <link>https://siaman70.github.io/my-slava-rodu/subdir2/content/</link>
+      <pubDate>Sat, 25 Feb 2023 14:41:09 +0100</pubDate>
+      <guid>https://siaman70.github.io/my-slava-rodu/subdir2/content/</guid>
+      <description>&lt;p&gt;Content 2&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

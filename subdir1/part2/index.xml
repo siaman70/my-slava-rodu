@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Part2 on My New Hugo Site</title>
+    <link>https://siaman70.github.io/my-slava-rodu/subdir1/part2/</link>
+    <description>Recent content in Part2 on My New Hugo Site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Feb 2023 14:41:59 +0100</lastBuildDate>
+    <atom:link href="https://siaman70.github.io/my-slava-rodu/subdir1/part2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Part 1/2</title>
+      <link>https://siaman70.github.io/my-slava-rodu/subdir1/part2/content/</link>
+      <pubDate>Sat, 25 Feb 2023 14:41:59 +0100</pubDate>
+      <guid>https://siaman70.github.io/my-slava-rodu/subdir1/part2/content/</guid>
+      <description>&lt;p&gt;Part 2 Content&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
