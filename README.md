@@ -43,4 +43,6 @@ https://github.com/peaceiris/actions-gh-pages?tab=readme-ov-file#%EF%B8%8F-first
     - create partial [sass.html](themes/minimal-theme/layouts/partials/sass.html)
     - include sass.html partial in [_base_of.html](themes/minimal-theme/layouts/_default/baseof.html)
 - see https://gohugo.io/hugo-pipes/transpile-sass-to-css/
+- Это просто обалдеть.......
+  
 
